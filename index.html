@@ -84,12 +84,12 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 :root[data-theme="light"] .fyp-title-box{background:rgba(99,102,241,.06);border-color:rgba(99,102,241,.2)}
 :root[data-theme="light"] .fyp-title-box p{color:var(--muted)}
 :root[data-theme="light"] .fyp-title-box h3{color:var(--text)}
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:32px}
 .kpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;backdrop-filter:blur(10px)}
 :root[data-theme="light"] .kpi{background:rgba(255,255,255,.7);border-color:rgba(99,102,241,.15);box-shadow:0 4px 20px rgba(99,102,241,.07)}
 .kpi-label{font-size:11px;font-weight:600;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
 :root[data-theme="light"] .kpi-label{color:var(--muted)}
-.kpi-val{font-size:28px;font-weight:900;font-family:'JetBrains Mono',monospace;color:#fff;margin-bottom:4px}
+.kpi-val{font-size:24px;font-weight:900;font-family:'JetBrains Mono',monospace;color:#fff;margin-bottom:4px}
 :root[data-theme="light"] .kpi-val{color:var(--text)}
 .kpi-note{font-size:11px;color:rgba(255,255,255,.4)}
 :root[data-theme="light"] .kpi-note{color:var(--slate)}
@@ -501,7 +501,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <div class="kpi-badge badge-warn"><i data-lucide="trending-down" size="10"></i> Critical Gap</div>
             <div class="kpi-label">Knowledge-Action Gap</div>
             <div class="kpi-val dv-a">27%</div>
-            <div class="kpi-note">High-awareness graduates still failing savings</div>
+            <div class="kpi-note">High-awareness graduates still failing savings target</div>
           </div>
           <div class="kpi">
             <div class="kpi-badge badge-down"><i data-lucide="alert-triangle" size="10"></i> 52 of 100</div>
@@ -510,13 +510,19 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <div class="kpi-note">Below 20% savings target (50/30/20 Rule)</div>
           </div>
           <div class="kpi">
+            <div class="kpi-badge badge-warn"><i data-lucide="eye" size="10"></i> Aware But Overspending</div>
+            <div class="kpi-label">Know But Don't Act</div>
+            <div class="kpi-val dv-a">35%</div>
+            <div class="kpi-note">Graduates who know financial rules but still overspend</div>
+          </div>
+          <div class="kpi">
             <div class="kpi-badge badge-ok"><i data-lucide="brain" size="10"></i> High Literacy</div>
             <div class="kpi-label">Avg Financial Awareness</div>
-            <div class="kpi-val" style="color:#c4b5fd">4.01/5</div>
+            <div class="kpi-val" style="color:#c4b5fd">4.00/5</div>
             <div class="kpi-note">Yet execution gap persists — structural issue</div>
           </div>
           <div class="kpi" style="border-top:2px solid var(--indigo)">
-            <div class="kpi-badge badge-down"><i data-lucide="zap" size="10"></i> −RM 2.9K Gap</div>
+            <div class="kpi-badge badge-down"><i data-lucide="zap" size="10"></i> −RM 2.87K Gap</div>
             <div class="kpi-label">Income vs DOSM Benchmark</div>
             <div class="kpi-val dv-i">RM 2.4K</div>
             <div class="kpi-note">vs DOSM national mean RM 5,330 (2024)</div>
@@ -543,8 +549,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <div>
             <h4 style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px">Core Financial Challenges (Chapter 1)</h4>
             <ul style="padding-left:18px;font-size:13px;color:var(--muted);line-height:2">
-              <li><strong style="color:var(--text)">Income Stagnation:</strong> Avg RM 2,456/month — RM 2,874 below DOSM 2024 national mean of RM 5,330</li>
-              <li><strong style="color:var(--text)">DSR Crisis:</strong> 37 respondents breach BNM 60% critical DSR threshold</li>
+              <li><strong style="color:var(--text)">Income Stagnation:</strong> Avg RM 2,456/month for fresh graduates — RM 2,874 below DOSM 2024 national mean of RM 5,330 (gap widened from RM 2,515 in 2020)</li>
+            <li><strong style="color:var(--text)">DSR Crisis:</strong> 37 respondents breach BNM 60% critical DSR threshold</li>
               <li><strong style="color:var(--text)">Geographic Pressure:</strong> Only 2 of 16 Malaysian states affordable for fresh graduates (coverage ≥70%)</li>
               <li><strong style="color:var(--text)">Tool Gap:</strong> Existing tools only descriptive — no prescriptive action guidance</li>
             </ul>
@@ -555,7 +561,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
               <li><span class="tag tag-i">50%</span> Needs — Essential spending limit (rent, food, transport)</li>
               <li><span class="tag tag-a">30%</span> Wants — Lifestyle spending limit (dining, leisure)</li>
               <li><span class="tag tag-g">20%</span> Savings — Minimum monthly savings target</li>
-              <li><strong style="color:var(--text)">Compliance:</strong> 78% Needs ✓ · 47% Savings ✗ · 80% Wants ✓</li>
+              <li><strong style="color:var(--text)">Compliance:</strong> 78% Needs ✓ · 48% Savings ✗ · 82% Wants ✓</li>
             </ul>
           </div>
         </div>
@@ -699,209 +705,6 @@ tr:hover td{background:rgba(255,255,255,.02)}
       </iframe>
     </div>
 
-    <!-- ② INTERACTIVE INFOGRAPHIC PAGE GUIDE -->
-    <div class="card reveal d2" style="margin-bottom:20px">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:20px">
-        <div>
-          <h3 style="color:var(--text);font-size:17px;font-weight:700;margin-bottom:4px">Dashboard Page Guide — 8 Pages</h3>
-          <p style="font-size:12px;color:var(--muted)">Click any page card to expand the analytical walkthrough. ★ = Prescriptive analytics pages (Objective 2)</p>
-        </div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(99,102,241,.1);color:var(--indigo);border:1px solid rgba(99,102,241,.2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--indigo);display:inline-block"></span>Descriptive</span>
-          <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--purple);display:inline-block"></span>Diagnostic</span>
-          <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--indigo);border:1px solid rgba(99,102,241,.3)">★ Prescriptive</span>
-        </div>
-      </div>
-
-      <!-- INFOGRAPHIC GRID -->
-      <div class="pg-infographic" id="pgInfographic">
-
-        <!-- P1 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg1d')" data-obj="1" data-type="descriptive">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(99,102,241,.15);color:var(--indigo)">P1</div>
-            <div class="pg-inf-icon"><i data-lucide="layout" size="18" style="color:var(--indigo)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(99,102,241,.1);color:var(--indigo)">Obj 1</div>
-          </div>
-          <div class="pg-inf-title">Dashboard<br>Overview</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">4 KPI Cards</span><span class="pg-chip">RAG Bar</span><span class="pg-chip">Donut</span><span class="pg-chip">50/30/20</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P2 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg2d')" data-obj="1" data-type="descriptive">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(168,85,247,.12);color:var(--purple)">P2</div>
-            <div class="pg-inf-icon"><i data-lucide="users" size="18" style="color:var(--purple)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(168,85,247,.1);color:var(--purple)">Obj 1</div>
-          </div>
-          <div class="pg-inf-title">Financial<br>Demographics</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">Income Bar</span><span class="pg-chip">Employment</span><span class="pg-chip">Donut</span><span class="pg-chip">Treemap</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P3 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg3d')" data-obj="1" data-type="diagnostic">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(236,72,153,.12);color:var(--pink)">P3</div>
-            <div class="pg-inf-icon"><i data-lucide="heart-pulse" size="18" style="color:var(--pink)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(236,72,153,.1);color:var(--pink)">Obj 1</div>
-          </div>
-          <div class="pg-inf-title">Financial<br>Health</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">Decomp Tree</span><span class="pg-chip">2 Gauges</span><span class="pg-chip">Scatter</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P4 -->
-        <div class="pg-inf-card pg-inf-presc" onclick="togglePg(this,'pg4d')" data-obj="2" data-type="prescriptive">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(239,68,68,.15);color:var(--red)">P4</div>
-            <div class="pg-inf-icon"><i data-lucide="shield-alert" size="18" style="color:var(--red)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(239,68,68,.12);color:var(--red)">★ Obj 2</div>
-          </div>
-          <div class="pg-inf-title">Risk<br>Analysis</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">Alert Engine</span><span class="pg-chip">Advice Table</span><span class="pg-chip">RAG Slicer</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P5 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg5d')" data-obj="1" data-type="diagnostic">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(16,185,129,.12);color:var(--emerald)">P5</div>
-            <div class="pg-inf-icon"><i data-lucide="target" size="18" style="color:var(--emerald)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(16,185,129,.1);color:var(--emerald)">Obj 1</div>
-          </div>
-          <div class="pg-inf-title">DOSM<br>Benchmarking</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">Line Charts</span><span class="pg-chip">Waterfall</span><span class="pg-chip">Age Group</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P6 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg6d')" data-obj="1" data-type="diagnostic">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(245,158,11,.12);color:var(--amber)">P6</div>
-            <div class="pg-inf-icon"><i data-lucide="map-pin" size="18" style="color:var(--amber)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(245,158,11,.1);color:var(--amber)">Obj 1</div>
-          </div>
-          <div class="pg-inf-title">Geographic<br>Risk Mapping</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">Malaysia Map</span><span class="pg-chip">CoL Index</span><span class="pg-chip">State Table</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P7 -->
-        <div class="pg-inf-card pg-inf-presc" onclick="togglePg(this,'pg7d')" data-obj="2" data-type="prescriptive">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(99,102,241,.2);color:var(--indigo)">P7</div>
-            <div class="pg-inf-icon"><i data-lucide="zap" size="18" style="color:var(--indigo)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(99,102,241,.15);color:var(--indigo)">★★ Obj 2</div>
-          </div>
-          <div class="pg-inf-title">Personalised<br>Action Plan</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">5 Slicers</span><span class="pg-chip">Health Score</span><span class="pg-chip">Live Advice</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-        <!-- P8 -->
-        <div class="pg-inf-card" onclick="togglePg(this,'pg8d')" data-obj="3" data-type="usability">
-          <div class="pg-inf-head">
-            <div class="pg-badge-num" style="background:rgba(100,116,139,.12);color:var(--slate)">P8</div>
-            <div class="pg-inf-icon"><i data-lucide="book-open" size="18" style="color:var(--slate)"></i></div>
-            <div class="pg-inf-obj" style="background:rgba(100,116,139,.1);color:var(--slate)">Obj 3</div>
-          </div>
-          <div class="pg-inf-title">User<br>Guide</div>
-          <div class="pg-inf-chips">
-            <span class="pg-chip">RAG Guide</span><span class="pg-chip">Nav SOP</span><span class="pg-chip">Tips</span>
-          </div>
-          <div class="pg-inf-expand"><i data-lucide="chevron-down" size="14"></i></div>
-        </div>
-
-      </div><!-- end pg-infographic -->
-
-      <!-- DETAIL PANELS — shown below grid when card clicked -->
-      <div class="pg-detail" id="pg1d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="layout" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Total Respondents (97), Avg Awareness (4.01/5), Avg Income (RM 2.4K), High-Risk Users (19%). 50/30/20 Compliance metrics (78% Needs ✓, 80% Wants ✓, 47% Savings ✗). Stacked bar: Financial Risk by Age Group. Donut: Awareness Breakdown. Bar: Top Financial Alerts.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>20% in Danger Zone · 51% in Warning · 29% On Track. 63.92% have High Awareness yet 52% fail the savings target — confirming the Knowledge-Action Gap that drives this entire FYP.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>Provides the executive overview that motivates prescriptive intervention. Descriptive analytics alone show the scale — proving that passive awareness is insufficient without active guidance tools.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 1 — Descriptive Analytics</h4><p>Maps the financial vulnerability landscape across 100 Malaysian fresh graduates. The 50/30/20 compliance cards are the primary descriptive evidence for Chapter 4 Section 4.3.1.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg2d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="users" size="13"></i> What This Page Shows</h4><p>Monthly Income Distribution — 59% earn below RM 2,500. Employment Status by Gender (55.4% female Full-Time, 68.8% female Further Studies). Qualification Donut (61.86% Degree). Graduate Distribution across Malaysian States (51% Selangor + W.P. KL). Financial Awareness Score by Income Level.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>61% earn below RM 2,500/month. Counterintuitively, the Below RM 1,500 income group scores the highest financial awareness (4.37/5) — proving income level, not awareness, drives financial vulnerability. The Knowledge-Action Gap is structural, not behavioural.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>Establishes the target demographic profile: young (69% aged 24 and below), low-income, urban-concentrated graduates. Justifies why prescriptive personalised advice — rather than generic financial education — is the correct intervention.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 1 — Diagnostic Analytics</h4><p>Identifies demographic drivers of financial risk for targeted intervention design. Chapter 4 Section 4.3.2 — demographic segmentation supporting hybrid data argument.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg3d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="heart-pulse" size="13"></i> What This Page Shows</h4><p>Decomposition Tree "Why Are Graduates Struggling? — Drill Down" — click Income, Education, Gender, Age Group to isolate root causes. Two BNM gauges: Needs Allocation (35.6% vs 50% limit) and Savings Rate (23.3% vs 20% target). Scatter: Savings Rate vs Essential Spending by respondent with 20% BNM reference line.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Only 47% meet the savings target. The decomposition tree shows Below RM 1,500 income group has highest awareness (4.37/5) — confirming root cause is income insufficiency, not financial ignorance. Savings rate 23.3% average is above target but distribution is highly uneven.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>The decomposition tree is the most analytically powerful visual in the entire dashboard. It provides live, interactive drill-down proof that income — not education or gender — is the primary driver of financial stress. Examiners can test this themselves in real-time.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 1 — Diagnostic Analytics</h4><p>Root cause analysis component of Chapter 4. The drill-down capability is evidence of diagnostic analytics beyond simple descriptive charting — directly differentiates this FYP from standard financial dashboards.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg4d" style="border-color:rgba(239,68,68,.25)">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="shield-alert" size="13"></i> What This Page Shows</h4><p>3 KPI cards: KA Gap 36.1%, Avg Alerts 1.3, In Danger Zone 19%. Donut: Financial Risk Breakdown (Critical 50%, Warning 50%). Column chart: Number of Graduates Who Exceeded Each Budget Limit (Savings=52, DSR=37, Needs=22, Lifestyle=18). Bar: Most Common Financial Problems. Prescriptive table: Respondent ID → Education → Gender → Income → Risk Level → Health Status → What Should This Person Do?</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>129 total alert records. Savings Below Target is the most common problem (52 graduates = 52%). Zero savings detected in some cases (critical alert). Average 1.3 alerts per person — 100% of respondents are in Warning or Danger. No one is fully On Track. This is the empirical basis for prescriptive intervention.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>The Prescriptive Advice table is the primary If-Then rules proof. Every row shows a specific respondent receiving a specific recommendation based on their financial profile. The RAG slicer lets examiners click "Red" to see only Critical cases — demonstrating the prescriptive engine working live.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i>★ Objective 2 — Prescriptive Dashboard</h4><p>This is the core prescriptive analytics proof page for Chapter 4 Section 4.3.3. The Prescriptive Output table with Respondent_ID + Recommendation is the direct evidence that If-Then rules are firing correctly for each of the 100 respondents.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg5d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="target" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Fresh Grad Salary RM 2.46K, National Mean RM 5.33K, Income Gap −RM 1.2K (54% below national mean), Unemployment Rate 3.2% (down from 4.4%). Dual line chart: DOSM National Mean vs Fresh Grad Mean Salary 2020–2024 with "Gap widened: RM 2,515 → RM 2,874" annotation. Waterfall: How Far Below the National Average. Grouped column: Fresh Graduate Income vs National Standard by Age Group (2024).</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Despite falling unemployment (4.4%→3.2%), the income gap widened: employed ≠ financially secure. Graduates aged 24 and below earn RM 608 below DOSM benchmark. This confirms that graduate financial stress is a structural wage problem — not solvable by employment alone. Minimum wage (RM 1,500) reference line shows many earn near-minimum.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>Provides the macroeconomic evidence base (DOSM secondary data) that validates the hybrid data approach. The widening income gap contextualises why 52% fail the savings target — it is structurally impossible to save 20% when income is RM 1,500 and rent alone exceeds RM 800.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 1 — Diagnostic Analytics</h4><p>Validates hybrid data methodology combining primary survey with DOSM Statistik Siswazah 2024 national benchmarks. Chapter 4 Section 4.3.5 — macroeconomic evidence supporting prescriptive recommendations.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg6d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="map-pin" size="13"></i> What This Page Shows</h4><p>Malaysia filled map: Cost of Living Pressure by State — Red=Critical (CoL &gt;70%), Amber=Warning (55–70%), Green=Manageable (&lt;55%). Bar chart: Fresh Graduate Cost Coverage by State (%) with 70% affordability threshold line. Stacked column: Financial Risk by Area Type (Urban/Metro/Semi-Urban/Rural). Column: Top 5 Most Financially Pressured States. Summary table with conditional colour formatting.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>3 states Critical (Kelantan 71.8%, W.P. Labuan, Sabah). Fresh grad salaries cover only 27.6% of living costs in W.P. Putrajaya — the worst affordability gap nationally. Only 2 of 16 states are manageable for fresh graduates. Urban graduates face the most severe financial pressure despite higher nominal income.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>Geographic risk modelling is a novel contribution — individual financial decisions cannot be evaluated without state-level cost-of-living context. Rural states are affordable but have highest poverty (Sabah 19.7%). This drives the prescriptive logic: the same income needs different advice depending on where the graduate lives.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 1 — Diagnostic Spatial Analytics</h4><p>Validates DOSM HIES 2022/2023 data integration. The geographic dimension is a unique FYP contribution — spatial prescriptive analytics for Malaysia. Chapter 4 Section 4.3.6 evidence.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg7d" style="border-color:rgba(99,102,241,.3)">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="zap" size="13"></i> What This Page Shows</h4><p>Section 1 INPUT: 5 interactive slicers — Monthly Income, Needs Spending, Wants Spending, Savings, Debt Commitment — each showing Max/Min targets from 50/30/20. Section 2 ANALYSIS: Financial Health Score gauge (0–100), Savings Rate, Essential Spending Rate, Lifestyle Spending Rate, Monthly Debt vs Income, Critical Alert, Your Risk Level. Section 3 BREAKDOWN: 50/30/20 donut. Section 4 ADVICE: Your Personal Smart Money Moves, Future Savings Growth Tracker, Expected Health Score gauge. Reset Simulation button.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Live Demo Sequence</h4><p><strong>Demo moment:</strong> Set Savings to RM 0 → Critical Savings Alert fires → Health Score drops to 60–70 → advice says "Save RM X/month, automate on payday." Change Savings to target amount → Green state → Health Score rises to 85+ → positive reinforcement. This 30-second sequence is the strongest live proof of prescriptive analytics working.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters for FYP</h4><p>This is the only fully interactive simulation page. Examiners can test any financial scenario live. The Health Score and advice text auto-update in real-time — this is the Natural Language Generation (NLG) + DAX combination described in Chapter 4 Section 4.3.3 Scenarios 1, 2, and 3.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i>★★ Objective 2 — Strongest Prescriptive Proof</h4><p>The live 5-slider simulation is the primary demonstration of the prescriptive engine for your examiner. Chapter 4 Section 4.3.7 — the personalised action plan is the FYP's most technically impressive feature and differentiates SFA Platform from all prior descriptive-only financial dashboards.</p></div>
-        </div>
-      </div>
-
-      <div class="pg-detail" id="pg8d">
-        <div class="pg-detail-inner">
-          <div class="brief"><h4><i data-lucide="book-open" size="13"></i> What This Page Shows</h4><p>Screenshot-based navigation guide with callout arrows: "Click to navigate between pages", "Use sliders to input your income", "Filter data by clicking chart segments", "Hover over any chart for insights", "Live financial analysis updates as you type". Quick Colour Guide: 🟢 Green = Budget looks great, 🟡 Amber = Time to look closer, 🔴 Red = Check Smart Money Moves table immediately. Financial Health Score scale explanation (0–100).</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> Objective 3 — Usability & UAT</h4><p>The User Guide enables independent navigation by non-expert fresh graduates — a prerequisite for valid UAT scenario-based testing. Chapter 3 Section 3.7 — UAT participants use this guide to complete the 3 prescribed evaluation tasks without researcher assistance.</p></div>
-        </div>
-      </div>
-
-    </div><!-- end page guide card -->
 
     <!-- PAGE WALKTHROUGHS — aligned with actual page content -->
     <div class="card reveal d3" style="margin-top:20px">
@@ -911,8 +714,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p1">
         <summary><i data-lucide="layout" size="14"></i> P1 — Dashboard Overview: Financial Risk by Age Group, Awareness Breakdown, Alerts</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Total Respondents (97), Avg Awareness (4.01), Avg Income (RM 2.4K), High-Risk Users (19%). Stacked bar showing RAG distribution by age group. Donut showing awareness level split. 50/30/20 compliance metrics. Top financial alert bar chart.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>20% of graduates are in the financial Danger Zone (3+ alerts). 51% are in Warning. Despite high awareness (63.92% High Awareness), 52% fail the savings target — confirming the Knowledge-Action Gap.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Total Respondents (100), Avg Awareness (4.00), Avg Income (RM 2.4K), High-Risk Users (20%). Stacked bar showing RAG distribution by age group. Donut showing awareness level split. 50/30/20 compliance metrics. Top financial alert bar chart.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>20% of graduates are in the financial Danger Zone (3+ alerts). 51% are in Warning. Despite high awareness (62% High Awareness), 52% fail the savings target — confirming the Knowledge-Action Gap.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Establishes the core thesis: financial awareness ≠ financial action. The executive overview proves that descriptive analytics alone are insufficient — prescriptive tools are needed.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Descriptive analytics. Maps the scale of the financial vulnerability problem across 97 Malaysian fresh graduates.</p></div>
         </div>
@@ -921,8 +724,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p2">
         <summary><i data-lucide="users" size="14"></i> P2 — Demographics: Income, Employment, Location, Qualification, Awareness by Income</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Monthly income distribution (59% earn below RM 2,500). Employment status by gender (55.4% female Full-Time). Qualification donut (61.86% Degree). State distribution (51% in Selangor & W.P. KL). Financial awareness score by income band.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>61% earn below RM 2,500/month. The lowest income group (Below RM 1,500) scores the highest financial awareness (4.3/5) — proving that income level, not awareness, drives financial vulnerability.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Monthly income distribution (62% earn below RM 2,500). Employment status by gender (55.4% female Full-Time). Qualification donut (61% Degree). State distribution (51% in Selangor & W.P. KL). Financial awareness score by income band.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>62% earn below RM 2,500/month. The lowest income group (RM 2,501–RM 3,500) scores the highest financial awareness (4.3/5) — proving that income level, not awareness, drives financial vulnerability.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Pins the target demographic: young (69% aged 24 and below), low-income, urban graduates concentrated in the highest-cost states. Justifies a geographically-sensitive prescriptive approach.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics. Identifies demographic drivers of financial risk for targeted prescriptive intervention.</p></div>
         </div>
@@ -931,18 +734,18 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p3">
         <summary><i data-lucide="heart-pulse" size="14"></i> P3 — Financial Health: Decomposition Tree, Gauges, Savings vs Income Scatter</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Decomposition Tree: "Why Are Graduates Struggling?" — drill down by Income → Education → Gender → Age Group. Two gauges: Needs Allocation (35.6% vs 50% limit) and Savings Rate (23.3% vs 20% target). Scatter: savings rate vs essential spending.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Savings compliance only 47% — 52% fail the 20% target. Needs compliance 78% (22% overspend on essentials). The decomposition tree shows that Below RM 1,500 income group drives the awareness score, confirming income level — not education — is the root cause.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Decomposition Tree: "Why Are Graduates Struggling?" — drill down by Employment → Income → Education → Gender. Two gauges: Needs Allocation (38.8% vs 50% limit) and Savings Rate (23.4% vs 20% target). Scatter: savings rate vs essential spending per respondent.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Savings compliance only 48% — 52% fail the 20% target. Needs compliance 78% (22% overspend on essentials). The decomposition tree shows Full-Time Employed graduates earning RM 2,501–RM 3,500 with a Degree score highest awareness (4.09), confirming income level — not education — is the root cause of financial stress.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>The decomposition tree is unique diagnostic proof — it visually isolates root causes of financial stress, directly supporting the research argument that structural income issues drive the Knowledge-Action Gap.</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics. Drill-down root cause analysis that examiner can interact with live during presentation.</p></div>
+          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics. Drill-down root cause analysis (Employment → Income → Education) that examiner can interact with live during presentation.</p></div>
         </div>
       </details>
 
       <details class="sub" id="p4">
         <summary><i data-lucide="shield-alert" size="14" style="color:var(--red)"></i> P4 — Risk Analysis: Alert Engine, RAG Breakdown, Prescriptive Advice Table ★ Objective 2</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>3 KPI cards (KA Gap 36.1%, Avg Alert 1.3, In Danger Zone 0.19). Donut: Financial Risk Breakdown (Critical 50%, Warning 50%). Column chart: Number of Graduates Who Exceeded Each Budget Limit. Bar: Most Common Financial Problems. Prescriptive table with Respondent ID, Education, Gender, Income, Risk Level, Health Status, Recommendation.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>129 total alert records. Savings Below Target = 52 graduates (most common). DSR Critical = 37. Average 1.3 alerts per person. Every respondent is in Warning or Danger — none fully On Track.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>3 KPI cards (KA Gap 35.0%, Avg Alert 1.3, In Danger Zone 0.20). Donut: Financial Risk Breakdown (Critical 50%, Warning 50%). Column chart: Number of Graduates Who Exceeded Each Budget Limit. Bar: Most Common Financial Problems. Prescriptive table with Respondent ID, Education, Gender, Income, Risk Level, Health Status, Recommendation.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>129 total alert records. Savings Below Target = 52 graduates (most common). DSR Critical = 37. Needs Overspend = 22. Lifestyle Inflation = 18. Average 1.3 alerts per person. 20% of respondents are in the Danger Zone, 51% in Warning Zone.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>The Prescriptive Advice table is the core If-Then rule proof. It shows which individual gets which specific recommendation — e.g. "Reduce discretionary spending by RM 150/month" — this is your Objective 2 evidence.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 2 ★</strong> — Prescriptive dashboard. The RAG classification + individual recommendation table is the primary prescriptive analytics proof for Chapter 4.</p></div>
         </div>
@@ -951,8 +754,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p5">
         <summary><i data-lucide="target" size="14"></i> P5 — Benchmarking: DOSM Salary Trend, Unemployment, Income Deviation, Age Group Comparison</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Fresh Grad Salary RM 2.46K, National Mean RM 5.33K, Income Gap −RM 1.2K (54% below national mean), Unemployment Rate 3.2%. Dual line chart: national vs fresh grad salary 2020–2024. Waterfall: how far below national average. Grouped column: fresh grad vs national by age group.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Salary gap widened: RM 2,515 (2020) → RM 2,874 (2024). The "24 and Below" group earns RM 608 below DOSM benchmark. Despite falling unemployment (4.4% → 3.2%), fresh graduate financial stress is increasing — employed ≠ financially secure.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Fresh Grad Starting Salary RM 2.46K, National Mean RM 5.33K, Income Gap −RM 1.2K (54% below national mean), Unemployment Rate 3.2%. Dual line chart: national vs fresh grad salary 2020–2024. Bar: how far below national average by age group. Grouped column: fresh grad vs national by age group.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Salary gap widened: RM 2,515 (2020) → RM 2,874 (2024). The "24 and Below" group earns RM 544 below the DOSM national average (−RM 544 vs DOSM). Despite falling unemployment (4.4% → 3.2%), fresh graduate financial stress is increasing — employment ≠ financial security.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size=13></i> Why It Matters</h4><p>Provides the macroeconomic evidence that the problem is structural (national wage stagnation) not behavioral (individual poor choices). Justifies prescriptive intervention as a systemic policy need.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics using DOSM secondary data. Validates hybrid data approach combining primary survey with national benchmarks.</p></div>
         </div>
@@ -961,8 +764,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p6">
         <summary><i data-lucide="map-pin" size="14"></i> P6 — Risk Mapping: CoL Pressure Map, Cost Coverage by State, Area Type Risk Distribution</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Malaysia map (CoL pressure by state using RAG colours). Bar chart: Fresh Graduate Cost Coverage by State — W.P. Putrajaya lowest at 27.6%, with 70% affordability threshold line. Stacked column: Financial Risk by Area Type (Urban/Metro/Semi-Urban/Rural). Top 5 Most Financially Pressured States. State financial risk summary table.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>3 states Critical (CoL &gt;70%): Kelantan (71.8%), W.P. Labuan, Sabah. Only 2 of 16 states manageable for fresh graduates. Fresh grad salaries cover only 27.6% of living costs in W.P. Putrajaya. Urban graduates face worst affordability gap.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Malaysia map (CoL pressure by state using RAG colours). Bar chart: Fresh Graduate Cost Coverage by State — W.P. Putrajaya lowest, with 70% affordability threshold line. Stacked column: Financial Risk by Area Type (Urban/Metro/Semi-Urban/Rural). Top 5 Most Financially Pressured States (Melaka, W.P. Putrajaya, Johor, W.P. Kuala Lumpur, Selangor). State financial risk summary table.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>3 states in Critical CoL zone (expenditure &gt;70% of income): Kelantan (71.8%), W.P. Labuan, Sabah. Only 2 of 16 states maintain a manageable affordability threshold for fresh graduates. Fresh grad salaries cover as little as 0.3% of basic living costs in W.P. Putrajaya — confirming highly urbanised clusters face the most severe affordability gap.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Geographic risk modelling is a novel contribution — showing individual financial decisions cannot be evaluated without state-level cost-of-living context. Rural states are affordable but have the highest poverty rates (Sabah 19.7%).</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic spatial analytics using DOSM HIES data. Contextualises individual prescriptive advice within macroeconomic geographic constraints.</p></div>
         </div>
@@ -972,7 +775,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <summary><i data-lucide="zap" size="14" style="color:var(--indigo)"></i> P7 — Action Plan: 5-Slider Simulator, Health Score, Personalised Advice ★★ Strongest Prescriptive Proof</summary>
         <div class="sub-body">
           <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>5 interactive slicers: Monthly Income, Needs Spending, Wants Spending, Savings, Debt Commitment. Section 2: Financial Health Score gauge (0–100), Savings/Needs/Wants compliance cards, DSR card, Critical Alert, Your Risk Level. Section 3: 50/30/20 Breakdown donut. Section 4: Your Personalised Financial Advice textbox + Future Savings Growth Tracker + Expected Health Score gauge. Reset Simulation button.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding (Live Demo)</h4><p>Simulating RM 3,500 income + RM 0 savings: Health Score = 70, Critical Savings Alert fires, advice says "Save RM 700/month — automate on payday." Changing savings to RM 700: Green zone, Health Score rises to 90+. Live demonstration of prescriptive logic working.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding (Live Demo)</h4><p>Simulating RM 3,500 income, Needs RM 1,750, Wants RM 1,050, Savings RM 0: Health Score = 70, Critical Savings Alert fires, advice says "Save RM 700/month — automate on payday." Savings Compliance 0.0%, Needs Compliance 100%, Wants Compliance 100%. Risk Level: High Risk. Adjusting savings to RM 700+: Health Score rises and Green zone is achievable.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>This is the only interactive simulation page. Examiners can test any financial scenario live. The prescriptive advice text auto-updates — this is the Natural Language Generation (NLG) + DAX combination that Chapter 4 Section 4.3.3 describes.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 2 ★★</strong> — Most important prescriptive page. The simulation is live proof of the prescriptive engine: user inputs → DAX rules fire → personalised actionable advice outputs. This is your strongest demo moment.</p></div>
         </div>
@@ -981,8 +784,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <details class="sub" id="p8">
         <summary><i data-lucide="book-open" size="14"></i> P8 — User Guide: Navigation SOP, RAG Colour Guide, Interaction Instructions</summary>
         <div class="sub-body">
-          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Screenshot-based navigation guide with callout arrows: Click to navigate, Use sliders to input income, Filter data by clicking chart segments, Hover for insights, Live analysis updates as you type. Quick Colour Guide (Green/Amber/Red with plain-language descriptions).</p></div>
-          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 3</strong> — Usability evaluation support. The User Guide ensures non-expert fresh graduates can navigate the dashboard independently, directly enabling the UAT evaluation tasks.</p></div>
+          <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Screenshot-based navigation guide with callout arrows: Click to navigate between pages, Use sliders to input income, Filter data by clicking chart segments, Hover over any chart for insights, Live financial analysis updates as you type. Quick Colour Guide (Green/Amber/Red with plain-language descriptions for non-expert users).</p></div>
+          <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 3</strong> — Usability evaluation support. The User Guide ensures non-expert fresh graduates can navigate the dashboard independently, directly enabling the UAT evaluation tasks in the final chapter.</p></div>
         </div>
       </details>
     </div>
