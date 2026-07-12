@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SFA Platform | Prescriptive Financial Analytics Dashboard — Husna Binti Zakaria | UiTM FYP 2026</title>
-<meta name="description" content="A Prescriptive Data Analytics Dashboard on Spending Behaviour Amongst Malaysian Fresh Graduates to Empower Financial Awareness. FYP by Husna Binti Zakaria, 2023885266, UiTM January 2026.">
+<meta name="description" content="A Prescriptive Data Analytics Dashboard on Spending Behaviour Amongst Malaysian Fresh Graduates to Empower Financial Awareness. FYP by Husna Binti Zakaria, 2023885266, UiTM July 2026.">
 <meta name="author" content="Husna Binti Zakaria, 2023885266, UiTM">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -38,11 +38,12 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .nav-sub:hover{background:rgba(255,255,255,0.03);color:var(--text)}
 .nav-sub.active{color:var(--indigo);font-weight:600}
 .sb-bottom{flex-shrink:0}
-.theme-toggle{all:unset;width:100%;cursor:pointer;display:block;margin-bottom:12px}
-.tt-track{position:relative;display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:100px;padding:4px;height:36px}
-.tt-thumb{position:absolute;left:4px;width:calc(50% - 4px);height:calc(100% - 8px);background:linear-gradient(135deg,var(--indigo),var(--purple));border-radius:100px;transition:transform .4s cubic-bezier(.16,1,.3,1)}
-:root[data-theme="light"] .tt-thumb{transform:translateX(calc(100% + 0px))}
-.tt-label{position:relative;z-index:1;flex:1;text-align:center;font-size:11px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:4px}
+.theme-toggle{all:unset;width:100%;cursor:pointer;display:block;margin-bottom:12px;box-sizing:border-box}
+.tt-track{position:relative;display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:100px;padding:4px;height:38px;box-sizing:border-box;overflow:hidden}
+:root[data-theme="light"] .tt-track{background:rgba(99,102,241,.06)}
+.tt-thumb{position:absolute;top:4px;left:4px;width:calc(50% - 4px);height:calc(100% - 8px);background:linear-gradient(135deg,var(--indigo),var(--purple));border-radius:100px;transition:transform .4s cubic-bezier(.16,1,.3,1);box-sizing:border-box}
+:root[data-theme="light"] .tt-thumb{transform:translateX(100%)}
+.tt-label{position:relative;z-index:1;flex:1;text-align:center;font-size:11px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:4px;height:100%}
 :root[data-theme="dark"] .tt-dark{color:#fff}
 :root[data-theme="dark"] .tt-light{color:var(--muted)}
 :root[data-theme="light"] .tt-light{color:#fff}
@@ -99,7 +100,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .badge-ok{background:rgba(16,185,129,.15);color:#6ee7b7}
 .obj-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .obj-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 16px}
-:root[data-theme="light"] .obj-card{background:rgba(99,102,241,.05);border-color:rgba(99,102,241,.12)}
+:root[data-theme="light"] .obj-card{background:rgba(255,255,255,.75);border-color:rgba(99,102,241,.15);box-shadow:0 4px 16px rgba(99,102,241,.08)}
+.hero-kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:12px}
+:root[data-theme="light"] .hero-kicker{color:var(--slate)}
 .obj-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
 .obj-text{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5}
 :root[data-theme="light"] .obj-text{color:var(--muted)}
@@ -293,7 +296,6 @@ tr:hover td{background:rgba(255,255,255,.02)}
 :root[data-theme="light"] #ts{color:var(--muted)}
 :root[data-theme="light"] .kpi{background:rgba(255,255,255,.8);border-color:rgba(99,102,241,.15)}
 :root[data-theme="light"] .kpi-val{color:var(--text)}
-:root[data-theme="light"] .obj-card{background:rgba(99,102,241,.04);border-color:rgba(99,102,241,.1)}
 :root[data-theme="light"] .flow-box{background:rgba(255,255,255,.7);border-color:rgba(99,102,241,.12)}
 :root[data-theme="light"] .brief{background:rgba(255,255,255,.7);border-color:rgba(99,102,241,.12)}
 :root[data-theme="light"] .iframe-win{background:#fff;border-color:rgba(99,102,241,.12)}
@@ -386,6 +388,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <span class="brand-name" style="font-size:16px;letter-spacing:-.3px">SFA Platform</span>
       <span style="font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.3px">Prescriptive Analytics</span>
     </div>
+
+    <!-- Theme toggle -->
+    <button class="theme-toggle" id="themeBtn" title="Toggle theme" style="padding:0 14px;margin-bottom:14px">
+      <div class="tt-track">
+        <span class="tt-label tt-dark"><i data-lucide="moon" size="12"></i> Dark</span>
+        <span class="tt-label tt-light"><i data-lucide="sun" size="12"></i> Light</span>
+        <div class="tt-thumb" id="ttThumb"></div>
+      </div>
+    </button>
+
     <div style="height:1px;background:var(--border);margin:0 16px"></div>
   </div>
 
@@ -406,7 +418,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <a href="#p4" class="nav-sub"><i data-lucide="shield-alert" size="13"></i> P4 — Risk Analysis</a>
     <a href="#p5" class="nav-sub"><i data-lucide="target" size="13"></i> P5 — Benchmarking</a>
     <a href="#p6" class="nav-sub"><i data-lucide="map-pin" size="13"></i> P6 — Risk Mapping</a>
-    <a href="#p7" class="nav-sub"><i data-lucide="zap" size="13"></i> P7 — Action Plan</a>
+    <a href="#p7" class="nav-sub"><i data-lucide="zap" size="13"></i> P7 — Smart Calculator</a>
     <a href="#p8" class="nav-sub"><i data-lucide="book-open" size="13"></i> P8 — User Guide</a>
     <a href="#engine" class="nav-item"><i data-lucide="calculator" size="16"></i> Prescriptive Engine</a>
 
@@ -417,18 +429,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <a href="#profile" class="nav-item"><i data-lucide="fingerprint" size="16"></i> Researcher Profile</a>
   </nav>
 
-  <!-- STATIC BOTTOM: Theme toggle + Profile centred -->
+  <!-- STATIC BOTTOM: Profile centred -->
   <div class="sb-bottom">
     <div style="height:1px;background:var(--border);margin:0 16px 14px"></div>
-
-    <!-- Theme toggle -->
-    <button class="theme-toggle" id="themeBtn" title="Toggle theme" style="padding:0 14px;margin-bottom:14px">
-      <div class="tt-track">
-        <span class="tt-label tt-dark"><i data-lucide="moon" size="12"></i> Dark</span>
-        <span class="tt-label tt-light"><i data-lucide="sun" size="12"></i> Light</span>
-        <div class="tt-thumb" id="ttThumb"></div>
-      </div>
-    </button>
 
     <!-- Profile centred -->
     <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 14px 16px;gap:6px">
@@ -469,7 +472,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         </h1>
 
         <div class="fyp-title-box reveal d1">
-          <p>FYP Title — Universiti Teknologi MARA · Bachelor of Information Technology (Hons.) · January 2026</p>
+          <p>FYP Title — Universiti Teknologi MARA · Bachelor of Information Technology (Hons.) · July 2026</p>
           <h3>A Prescriptive Data Analytics Dashboard on Spending Behaviour Amongst Malaysian Fresh Graduates to Empower Financial Awareness</h3>
         </div>
 
@@ -477,7 +480,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
           Bridging the Knowledge-Action Gap among Malaysian fresh graduates using Power BI, 50/30/20 Rule-Based DAX logic, DOSM national benchmarks, and an 8-page interactive prescriptive analytics dashboard.
         </p>
 
-        <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:12px" class="reveal d2">Research Objectives Alignment</h4>
+        <h4 class="hero-kicker reveal d2">Research Objectives Alignment</h4>
         <div class="obj-row reveal d3">
           <div class="obj-card">
             <div class="obj-num" style="color:var(--indigo)">Objective 1</div>
@@ -485,23 +488,23 @@ tr:hover td{background:rgba(255,255,255,.02)}
           </div>
           <div class="obj-card">
             <div class="obj-num" style="color:var(--purple)">Objective 2</div>
-            <div class="obj-text">Develop a <strong class="obj-strong">prescriptive analytics dashboard</strong> to visualise rule-based analysis — dashboard Pages 4 and 7</div>
+            <div class="obj-text">Develop a website that embeds a <strong class="obj-strong">prescriptive analytics dashboard</strong> providing actionable financial recommendations — dashboard Pages 4 and 7</div>
           </div>
           <div class="obj-card">
             <div class="obj-num" style="color:var(--emerald)">Objective 3</div>
-            <div class="obj-text">Evaluate dashboard effectiveness using <strong class="obj-strong">UAT and expert evaluation</strong> — Evaluation Results section</div>
+            <div class="obj-text">Evaluate the effectiveness and usability of the website using <strong class="obj-strong">Expert Evaluation and User Acceptance Testing (UAT)</strong> — Evaluation Results section</div>
           </div>
         </div>
 
         <div class="divider" style="border-color:rgba(255,255,255,.08);margin:24px 0"></div>
 
-        <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:12px" class="reveal d3">Executive KPI Command Centre</h4>
+        <h4 class="hero-kicker reveal d3">Executive KPI Command Centre</h4>
         <div class="kpi-row reveal d3">
           <div class="kpi">
-            <div class="kpi-badge badge-warn"><i data-lucide="trending-down" size="10"></i> Critical Gap</div>
-            <div class="kpi-label">Knowledge-Action Gap</div>
-            <div class="kpi-val dv-a">27%</div>
-            <div class="kpi-note">High-awareness graduates still failing savings target</div>
+            <div class="kpi-badge badge-warn"><i data-lucide="trending-down" size="10"></i> Financial Health Tier</div>
+            <div class="kpi-label">Warning Zone</div>
+            <div class="kpi-val dv-a">51%</div>
+            <div class="kpi-note">Cumulative budget-alert threshold classification (29% On Track · 20% Danger)</div>
           </div>
           <div class="kpi">
             <div class="kpi-badge badge-down"><i data-lucide="alert-triangle" size="10"></i> 52 of 100</div>
@@ -576,7 +579,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
           <table>
             <thead><tr><th>Literacy (Knowledge)</th><th>Execution (Action)</th><th>Financial Result</th><th>Dashboard Page</th><th>Response</th></tr></thead>
             <tbody>
-              <tr><td>High — avg 4.01/5.0</td><td>Savings below 20%</td><td><span class="tag tag-a">KA Gap — 27%</span></td><td>P3 Financial Health</td><td>Amber alert + savings prescription</td></tr>
+              <tr><td>High — avg 4.00/5.0</td><td>Savings below 20%</td><td><span class="tag tag-a">KA Gap — 35%</span></td><td>P3 Financial Health</td><td>Amber alert + savings prescription</td></tr>
               <tr><td>High — aware of DSR</td><td>DSR > 60% threshold</td><td><span class="tag tag-r">Danger Zone — 20%</span></td><td>P4 Risk Analysis</td><td>Red alert + AKPK referral</td></tr>
               <tr><td>High — applied daily</td><td>50/30/20 compliance</td><td><span class="tag tag-g">On Track — 29%</span></td><td>P1 Dashboard</td><td>Green — positive reinforcement</td></tr>
             </tbody>
@@ -725,7 +728,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <summary><i data-lucide="users" size="14"></i> P2 — Demographics: Income, Employment, Location, Qualification, Awareness by Income</summary>
         <div class="sub-body">
           <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Monthly income distribution (62% earn below RM 2,500). Employment status by gender (55.4% female Full-Time). Qualification donut (61% Degree). State distribution (51% in Selangor & W.P. KL). Financial awareness score by income band.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>62% earn below RM 2,500/month. The lowest income group (RM 2,501–RM 3,500) scores the highest financial awareness (4.3/5) — proving that income level, not awareness, drives financial vulnerability.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>62% earn below RM 2,500/month. Financial awareness scores are fairly uniform across income bands (3.9–4.3/5, near ceiling) — indicating income level, not lack of financial knowledge, is the primary driver of financial vulnerability.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Pins the target demographic: young (69% aged 24 and below), low-income, urban graduates concentrated in the highest-cost states. Justifies a geographically-sensitive prescriptive approach.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics. Identifies demographic drivers of financial risk for targeted prescriptive intervention.</p></div>
         </div>
@@ -755,7 +758,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <summary><i data-lucide="target" size="14"></i> P5 — Benchmarking: DOSM Salary Trend, Unemployment, Income Deviation, Age Group Comparison</summary>
         <div class="sub-body">
           <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>4 KPI cards: Fresh Grad Starting Salary RM 2.46K, National Mean RM 5.33K, Income Gap −RM 1.2K (54% below national mean), Unemployment Rate 3.2%. Dual line chart: national vs fresh grad salary 2020–2024. Bar: how far below national average by age group. Grouped column: fresh grad vs national by age group.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Salary gap widened: RM 2,515 (2020) → RM 2,874 (2024). The "24 and Below" group earns RM 544 below the DOSM national average (−RM 544 vs DOSM). Despite falling unemployment (4.4% → 3.2%), fresh graduate financial stress is increasing — employment ≠ financial security.</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>Salary gap widened: RM 2,515 (2020) → RM 2,874 (2024). Graduates aged 24 and below suffer the highest economic vulnerability, exhibiting a deficit of −RM 66 vs DOSM relative to national baselines. Despite falling unemployment (4.4% → 3.2%), fresh graduate financial stress is increasing — employment ≠ financial security.</p></div>
           <div class="brief"><h4><i data-lucide="alert-circle" size=13></i> Why It Matters</h4><p>Provides the macroeconomic evidence that the problem is structural (national wage stagnation) not behavioral (individual poor choices). Justifies prescriptive intervention as a systemic policy need.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic analytics using DOSM secondary data. Validates hybrid data approach combining primary survey with national benchmarks.</p></div>
         </div>
@@ -765,14 +768,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <summary><i data-lucide="map-pin" size="14"></i> P6 — Risk Mapping: CoL Pressure Map, Cost Coverage by State, Area Type Risk Distribution</summary>
         <div class="sub-body">
           <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>Malaysia map (CoL pressure by state using RAG colours). Bar chart: Fresh Graduate Cost Coverage by State — W.P. Putrajaya lowest, with 70% affordability threshold line. Stacked column: Financial Risk by Area Type (Urban/Metro/Semi-Urban/Rural). Top 5 Most Financially Pressured States (Melaka, W.P. Putrajaya, Johor, W.P. Kuala Lumpur, Selangor). State financial risk summary table.</p></div>
-          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>3 states in Critical CoL zone (expenditure &gt;70% of income): Kelantan (71.8%), W.P. Labuan, Sabah. Only 2 of 16 states maintain a manageable affordability threshold for fresh graduates. Fresh grad salaries cover as little as 0.3% of basic living costs in W.P. Putrajaya — confirming highly urbanised clusters face the most severe affordability gap.</p></div>
-          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Geographic risk modelling is a novel contribution — showing individual financial decisions cannot be evaluated without state-level cost-of-living context. Rural states are affordable but have the highest poverty rates (Sabah 19.7%).</p></div>
+          <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding</h4><p>3 states are classified under Critical Risk, where essential living expenditures overwhelm graduate starting salaries. Fresh graduate salaries cover as little as 0.3% of basic living costs in W.P. Putrajaya — confirming highly urbanised clusters face the most severe affordability gap. Only 2 of 16 states maintain a manageable affordability threshold for fresh graduates.</p></div>
+          <div class="brief"><h4><i data-lucide="alert-circle" size="13"></i> Why It Matters</h4><p>Geographic risk modelling is a novel contribution — showing individual financial decisions cannot be evaluated without state-level cost-of-living context. It reinforces the critical need for localised, prescriptive budgeting interventions rather than one-size-fits-all national advice.</p></div>
           <div class="brief outcome"><h4><i data-lucide="check-circle" size="13"></i> FYP Objective</h4><p><strong>Objective 1</strong> — Diagnostic spatial analytics using DOSM HIES data. Contextualises individual prescriptive advice within macroeconomic geographic constraints.</p></div>
         </div>
       </details>
 
       <details class="sub" id="p7">
-        <summary><i data-lucide="zap" size="14" style="color:var(--indigo)"></i> P7 — Action Plan: 5-Slider Simulator, Health Score, Personalised Advice ★★ Strongest Prescriptive Proof</summary>
+        <summary><i data-lucide="zap" size="14" style="color:var(--indigo)"></i> P7 — Smart Calculator: 5-Slider Simulator, Health Score, Personalised Advice ★★ Strongest Prescriptive Proof</summary>
         <div class="sub-body">
           <div class="brief"><h4><i data-lucide="microscope" size="13"></i> What This Page Shows</h4><p>5 interactive slicers: Monthly Income, Needs Spending, Wants Spending, Savings, Debt Commitment. Section 2: Financial Health Score gauge (0–100), Savings/Needs/Wants compliance cards, DSR card, Critical Alert, Your Risk Level. Section 3: 50/30/20 Breakdown donut. Section 4: Your Personalised Financial Advice textbox + Future Savings Growth Tracker + Expected Health Score gauge. Reset Simulation button.</p></div>
           <div class="brief"><h4><i data-lucide="lightbulb" size="13"></i> Key Finding (Live Demo)</h4><p>Simulating RM 3,500 income, Needs RM 1,750, Wants RM 1,050, Savings RM 0: Health Score = 70, Critical Savings Alert fires, advice says "Save RM 700/month — automate on payday." Savings Compliance 0.0%, Needs Compliance 100%, Wants Compliance 100%. Risk Level: High Risk. Adjusting savings to RM 700+: Health Score rises and Green zone is achievable.</p></div>
@@ -859,8 +862,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <li><span class="dv dv-g">Phase 3</span> — Development: DAX prescriptive engine, 8-page Power BI dashboard, Dockerized web application</li>
           </ul>
           <ul style="padding-left:18px;font-size:13px;color:var(--muted);line-height:2.1">
-            <li><span class="dv dv-g">Phase 4</span> — Deployment: Power BI Service cloud publish, Docker + XAMPP local sandbox, HTML iframe embed</li>
-            <li><span class="dv dv-g">Phase 5</span> — Evaluation: UAT with fresh graduates, Expert evaluation by domain specialists</li>
+            <li><span class="dv dv-g">Phase 4</span> — Evaluation: UAT with fresh graduates, Expert evaluation by domain specialists</li>
+            <li><span class="dv dv-g">Phase 5</span> — Deployment: Power BI Service cloud publish, Docker + XAMPP local sandbox, HTML iframe embed</li>
             <li><span class="dv dv-g">Phase 6</span> — Documentation: FYP report, data dictionary, system flowcharts, Gantt chart</li>
           </ul>
         </div>
@@ -886,7 +889,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <summary><i data-lucide="award" size="18" style="color:var(--muted)"></i> Core Research Contributions — Chapter 4 Novel Findings</summary>
       <div class="acc-body">
         <ul style="padding-left:18px;font-size:13px;color:var(--muted);line-height:2">
-          <li>Quantifies the Knowledge-Action Gap (27%) — first Malaysian fresh graduate dataset combining financial awareness scores with actual spending compliance</li>
+          <li>Quantifies the Knowledge-Action Gap (35%) — first Malaysian fresh graduate dataset combining financial awareness scores with actual spending compliance</li>
           <li>Transforms descriptive dashboards into an automated prescriptive decision-support system using deterministic 50/30/20 DAX rule-based logic</li>
           <li>Integrates DOSM macro benchmarks (salary, employment, HIES state CoL) with micro individual respondent data in a hybrid star-schema Power BI model</li>
           <li>Develops geographic financial risk model — only 2 of 16 Malaysian states affordable for fresh graduates — novel spatially-contextualised prescriptive finding</li>
@@ -900,8 +903,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <div class="section-head reveal">
       <div class="audience-pill"><i data-lucide="clipboard-check" size="12"></i> For Supervisors & Evaluators</div>
       <h2 class="section-h2">Evaluation Results</h2>
-      <p class="section-p">Dual evaluation method: UAT with fresh graduates and Expert Evaluation by domain specialists — directly assessing Objective 3.</p>
-      <p class="italic-note">Objective 3 — Evaluate the effectiveness of the developed dashboard using UAT in terms of user acceptance</p>
+      <p class="section-p">Dual evaluation method: User Acceptance Test with fresh graduates and Expert Evaluation by domain specialists — directly assessing Objective 3.</p>
+      <p class="italic-note">Objective 3 — Evaluate the effectiveness and usability of the website using Expert Evaluation and User Acceptance Testing (UAT)</p>
     </div>
 
     <div class="eval-card reveal d1">
@@ -912,15 +915,15 @@ tr:hover td{background:rgba(255,255,255,.02)}
         </div>
         <span class="eval-lbl ev-uat">UAT</span>
       </div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:4px">Scenario-based testing with Malaysian fresh graduate participants. Tasks include: identify spending leakage, simulate income change on Action Plan, read prescriptive recommendation table.</p>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Technology Acceptance Model (TAM): Perceived Usefulness (PU) + Perceived Ease of Use (PEOU) · System Usability Scale (SUS) ≥68 target</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:4px">30 Malaysian fresh graduates interacted with the fully deployed platform (all 8 dashboard pages + Web Portal) for 20–30 minutes before completing the instrument. 53.3% male / 46.7% female; 53.3% earning below RM 1,500/month.</p>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Technology Acceptance Model (TAM), extended to 5 constructs: Perceived Ease of Use (PEU), Perceived Usefulness (PU), Attitude Toward System (ATT), Behavioural Intention (BI), System Quality (SQ) · 22 Likert items (Q6–Q27) · Mode as sole measure of central tendency</p>
       <div class="eval-scores">
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--indigo)" id="uatN">—</div><div class="eval-score-l">Participants</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--emerald)" id="uatScore">—</div><div class="eval-score-l">Acceptance (%)</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--purple)" id="uatPU">—</div><div class="eval-score-l">Perceived Usefulness</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--amber)" id="uatPEOU">—</div><div class="eval-score-l">Ease of Use</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--indigo)" id="uatN">30</div><div class="eval-score-l">Participants</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--emerald)" id="uatScore">15/22</div><div class="eval-score-l">Items at Mode 5 (Strongly Agree)</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--purple)" id="uatPU">4–5</div><div class="eval-score-l">Perceived Usefulness (Mode)</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--amber)" id="uatPEOU">1/22</div><div class="eval-score-l">Items w/ Any Negative Rating</div></div>
       </div>
-      <p style="font-size:11px;color:var(--slate);font-style:italic;margin-top:8px">⚠ Update id values (uatN, uatScore, uatPU, uatPEOU) with actual results after UAT is completed.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">Behavioural Intention (BI) was the strongest construct — all 4 items resolved to mode 5. Only Q25 (System Response Speed) recorded any Disagree/Strongly Disagree responses, alongside 3 Neutral ratings — the widest spread of any item, despite a nominal mode of 5. Of 30 respondents, 18 (60%) left open-ended suggestions (Q28), most commonly requesting a Light Mode, PDF export of recommendations, and clearer tooltips for technical terms (DSR, KA Gap).</p>
     </div>
 
     <div class="eval-card reveal d2" style="margin-top:12px">
@@ -931,13 +934,14 @@ tr:hover td{background:rgba(255,255,255,.02)}
         </div>
         <span class="eval-lbl ev-exp">Expert</span>
       </div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Domain specialists evaluate analytical validity, prescriptive logic accuracy (50/30/20 DAX correctness), DOSM/BNM compliance, dashboard design quality, and prescriptive usefulness against structured criteria aligned to FYP objectives.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px">6 multi-disciplinary experts (Information Technology, Data Analytics, Finance/Accounting, Business & Management, Student Affairs) rated 23 items across 5 domains — analytical accuracy, dashboard design, prescriptive engine quality, research alignment and deployment readiness — on a 5-point Likert scale, analysed by mode.</p>
       <div class="eval-scores">
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--emerald)" id="expN">—</div><div class="eval-score-l">Evaluators</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--indigo)" id="expAnalytics">—</div><div class="eval-score-l">Analytics Validity (/5)</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--purple)" id="expPrescriptive">—</div><div class="eval-score-l">Prescriptive Logic (/5)</div></div>
-        <div class="eval-score"><div class="eval-score-n" style="color:var(--amber)" id="expDesign">—</div><div class="eval-score-l">Dashboard Design (/5)</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--emerald)" id="expN">6</div><div class="eval-score-l">Evaluators</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--indigo)" id="expAnalytics">4–5</div><div class="eval-score-l">Analytical Accuracy (Mode)</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--purple)" id="expPrescriptive">4</div><div class="eval-score-l">Prescriptive Engine (Mode)</div></div>
+        <div class="eval-score"><div class="eval-score-n" style="color:var(--amber)" id="expDesign">0/23</div><div class="eval-score-l">Negative Ratings (1 or 2)</div></div>
       </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">Research Alignment (Section D) was the strongest dimension — every item resolved to mode 5 with zero missing responses. The Prescriptive Engine section (C1–C4) plateaued at Agree (4) rather than Strongly Agree, echoing a recurring call for visible formulas and scoring weights. Deployment Readiness (E1) was the only item to settle at Neutral (mode 3) — flagged as the priority refinement area. A reproducible data-display anomaly on the Demographics page (lowest income band showing an inflated 4.3/5 instead of the correct 3.9/5) was independently identified by an expert and resolved in the refinement phase (Section 5.4).</p>
       <details class="sub" style="margin-top:14px">
         <summary style="font-size:13px;font-weight:600">Expert Evaluation Criteria Framework</summary>
         <div style="padding:12px 16px">
@@ -1021,7 +1025,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
             <li><strong style="color:var(--text)">RAG Slicer (P4):</strong> Click "Red", "Amber", or "Green" button to filter the prescriptive table to that risk group only</li>
           </ul>
           <ul style="padding-left:18px;font-size:13px;color:var(--muted);line-height:2">
-            <li><strong style="color:var(--text)">Action Plan Simulator (P7):</strong> Adjust all 5 sliders to model a personal financial scenario — watch Health Score and advice update live</li>
+            <li><strong style="color:var(--text)">Smart Calculator (P7):</strong> Adjust all 5 sliders to model a personal financial scenario — watch Health Score and advice update live</li>
             <li><strong style="color:var(--text)">DOSM Comparison (P7):</strong> View how simulated income compares to DOSM RM 2,456 fresh grad benchmark with a personalised note</li>
             <li><strong style="color:var(--text)">Reset Simulation:</strong> Click Reset button on P7 to restore default values</li>
           </ul>
@@ -1043,7 +1047,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       </a>
       <h2 class="pname reveal d2">Husna Binti Zakaria</h2>
       <div class="ptitle reveal d2">Lead Data Researcher & System Architect</div>
-      <p class="puni reveal d2">Universiti Teknologi MARA (UiTM) · Faculty of Computer & Mathematical Sciences<br><span style="font-size:13px">Bachelor of Information Technology (Hons.) · Student ID: 2023885266 · January 2026</span></p>
+      <p class="puni reveal d2">Universiti Teknologi MARA (UiTM) · Faculty of Computer & Mathematical Sciences<br><span style="font-size:13px">Bachelor of Information Technology (Hons.) · Student ID: 2023885266 · July 2026</span></p>
       <div class="contact-row reveal d2">
         <a href="mailto:2023885266@student.uitm.edu.my" class="contact-link"><i data-lucide="mail" size="16"></i> 2023885266@student.uitm.edu.my</a>
         <a href="https://www.linkedin.com/in/husna-zakaria-881139331" target="_blank" class="contact-link"><i data-lucide="linkedin" size="16" style="color:#60a5fa"></i> LinkedIn Profile</a>
@@ -1200,7 +1204,7 @@ function runSim(){
       <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:12px;font-size:12px;color:var(--muted)">${dosmNote} · DSR: ${dsr}%</div>
       ${alertsHtml}
       <a href="#analytics" class="btn" style="width:100%;justify-content:center;margin-top:10px;font-size:12px">
-        <i data-lucide="external-link" size="14"></i> Open Full Dashboard (P7 Action Plan)
+        <i data-lucide="external-link" size="14"></i> Open Full Dashboard (P7 Smart Calculator)
       </a>
     </div>`;
   lucide.createIcons();
